@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Sumatif - Dakwah Ramah Milenial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                 <img src="images/logo.png" alt="Logo Dakwah Milenial" class="logo">
+                <h2>Dakwah Milenial</h2>
+            </div>
+           <ul class="nav-menu">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="materi.html">MATERI</a></li>
+        <li><a href="tes.html">TES SUMATIF</a></li>
+        <li><a href="about.html">ABOUT AUTHOR</a></li>
+           </ul>
+        </div>
+    </nav>
+
+    <section class="tes-section">
+        <div class="container">
+            <div class="tes-container">
+                <div class="tes-hero">
+                    <h1>📝 Tes Sumatif</h1>
+                    <p>Uji pemahaman Anda tentang materi Dakwah Ramah Milenial</p>
+                </div>
+
+                <div id="levelSelection" class="level-selection-container">
+                    <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Pilih Tingkat Kesulitan</h2>
+                    <div class="level-selection">
+                        <div class="level-card" onclick="startQuiz(1)">
+                            <div class="level-number">1</div>
+                            <div class="level-name">Pemula</div>
+                            <div class="level-desc">5 soal dasar</div>
+                        </div>
+                        <div class="level-card" onclick="startQuiz(2)">
+                            <div class="level-number">2</div>
+                            <div class="level-name">Menengah</div>
+                            <div class="level-desc">5 soal menengah</div>
+                        </div>
+                        <div class="level-card" onclick="startQuiz(3)">
+                            <div class="level-number">3</div>
+                            <div class="level-name">Lanjutan</div>
+                            <div class="level-desc">5 soal lanjutan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quizContainer" class="quiz-container">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                    </div>
+
+                    <div class="quiz-header">
+                        <div class="quiz-info">
+                            <div class="info-item">
+                                <span class="info-label">Level</span>
+                                <span id="currentLevel" class="info-value">1</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Soal</span>
+                                <span id="questionCounter" class="info-value">1/5</span>
+                            </div>
+                        </div>
+                        <button onclick="exitQuiz()" class="nav-btn btn-prev">Keluar</button>
+                    </div>
+
+                    <div id="questionContainer" class="question-card"></div>
+
+                    <div class="quiz-navigation">
+                        <button id="prevBtn" class="nav-btn btn-prev" onclick="previousQuestion()">← Sebelumnya</button>
+                        <button id="nextBtn" class="nav-btn btn-next" onclick="nextQuestion()">Selanjutnya →</button>
+                        <button id="submitBtn" class="nav-btn btn-submit" onclick="submitQuiz()" style="display: none;">Selesai</button>
+                    </div>
+                </div>
+
+                <div id="resultContainer" class="result-container">
+                    <div class="tes-hero">
+                        <h1>🎉 Hasil Tes</h1>
+                    </div>
+
+                    <div class="result-score" id="resultScore">0</div>
+                    <div class="result-message" id="resultMessage">Selamat!</div>
+                    
+                    <div class="result-detail">
+                        <div class="detail-card">
+                            <div class="detail-value" id="correctCount">0</div>
+                            <div class="detail-label">Benar</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-value" id="wrongCount">0</div>
+                            <div class="detail-label">Salah</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-value" id="percentageScore">0%</div>
+                            <div class="detail-label">Persentase</div>
+                        </div>
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="nav-btn btn-prev" onclick="resetQuiz()">Pilih Level Lain</button>
+                        <button class="nav-btn btn-next" onclick="retryQuiz()">Coba Lagi</button>
+                        <button class="nav-btn btn-submit" onclick="window.location.href='materi.html'">Lihat Materi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+       <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3>
+                        <img src="images/logo.png" alt="Masjid" style="width: 24px; height: 24px; margin-right: 0.5rem;">
+                        Dakwah Ramah Milenial
+                    </h3>
+                    <p>Menyebarkan nilai-nilai Islam yang penuh kasih sayang untuk seluruh alam dengan pendekatan yang ramah dan relevan bagi generasi milenial.</p>
+                    <p class="footer-tagline">"Islam Rahmatan Lil 'Alamin"</p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@adastradeaspera" target="_blank" class="social-link youtube" title="YouTube">
+                            <img src="https://cdn.simpleicons.org/youtube/white" alt="YouTube" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/riiezzz_" target="_blank" class="social-link instagram" title="Instagram">
+                            <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram" class="social-icon">
+                        </a>
+                        <a href="https://wa.me/6285803407247" target="_blank" class="social-link whatsapp" title="WhatsApp">
+                            <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp" class="social-icon">
+                        </a>
+                        <a href="mailto:farissholahuddin@student.uns.ac.id" class="social-link email" title="Email">
+                            <img src="https://cdn.simpleicons.org/gmail/white" alt="Email" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>
+                        <img src="https://api.iconify.design/mdi/link-variant.svg?color=%23667eea" alt="Links" style="width: 20px; height: 20px; margin-right: 0.5rem;">
+                        Quick Links
+                    </h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="index.html">
+                                <img src="https://api.iconify.design/mdi/home.svg?color=%23667eea" alt="Home" style="width: 18px; height: 18px;">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="materi.html">
+                                <img src="https://api.iconify.design/mdi/book-open-page-variant.svg?color=%23667eea" alt="Materi" style="width: 18px; height: 18px;">
+                                <span>Materi Dakwah</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                <img src="https://api.iconify.design/mdi/account.svg?color=%23667eea" alt="About" style="width: 18px; height: 18px;">
+                                <span>About Author</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Location -->
+                <div class="footer-section">
+                    <h4>
+                        <img src="https://api.iconify.design/mdi/map-marker.svg?color=%23667eea" alt="Location" style="width: 20px; height: 20px; margin-right: 0.5rem;">
+                        Hubungi Kami
+                    </h4>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn.simpleicons.org/gmail/white" alt="Email" style="width: 20px; height: 20px; filter: brightness(0) invert(1);">
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-label">Email</div>
+                            <a href="mailto:farissholahuddin@student.uns.ac.id">farissholahuddin@student.uns.ac.id</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp" style="width: 20px; height: 20px; filter: brightness(0) invert(1);">
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-label">WhatsApp</div>
+                            <a href="https://wa.me/6285803407247" target="_blank">+62 858-0340-7247</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="https://cdn.simpleicons.org/googlemaps/white" alt="Location" style="width: 20px; height: 20px; filter: brightness(0) invert(1);">
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-label">Lokasi</div>
+                            <span>UNS Kampus 4 Kleco, Surakarta</span>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps -->
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.12948763598!2d110.78730757411694!3d-7.560857874664298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a1430c94c9fa9%3A0xd4ce5a9cfe17e3b4!2sUniversitas%20Sebelas%20Maret%20Surakarta%20-%20Kampus%204!5e0!3m2!1sid!2sid!4v1761808254146!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dakwah Ramah Milenial - Islam Rahmatan Lil 'Alamin</p>
+                <p>Your Faith, Your Vibe</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem;">
+                    <img src="https://api.iconify.design/mdi/school.svg?color=%23667eea" alt="University" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 0.3rem;">
+                    Universitas Sebelas Maret
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Bank Soal - 3 Level dengan masing-masing 5 soal
+        const questionBank = {
+            1: [ // Level Pemula
+                {
+                    question: "Apa arti dari 'Rahmatan Lil Alamin'?",
+                    options: ["Rahmat bagi orang Islam saja", "Rahmat bagi seluruh alam", "Rahmat bagi orang Arab", "Rahmat bagi bangsa tertentu"],
+                    correct: 1
+                },
+                {
+                    question: "Dalam Al-Qur'an surah mana disebutkan tentang Rahmatan Lil Alamin?",
+                    options: ["QS. Al-Baqarah", "QS. Al-Anbiya ayat 107", "QS. Al-Fatihah", "QS. An-Nas"],
+                    correct: 1
+                },
+                {
+                    question: "Generasi milenial lahir pada tahun berapa?",
+                    options: ["1965-1980", "1981-1996", "1997-2012", "2013-sekarang"],
+                    correct: 1
+                },
+                {
+                    question: "Apa yang dimaksud dengan wasathiyyah?",
+                    options: ["Ekstremisme dalam beragama", "Moderasi dan keseimbangan", "Liberal dalam beragama", "Fanatisme berlebihan"],
+                    correct: 1
+                },
+                {
+                    question: "Toleransi dalam Islam berarti?",
+                    options: ["Menyamakan semua agama", "Menghormati perbedaan keyakinan", "Tidak peduli dengan agama lain", "Memaksakan keyakinan"],
+                    correct: 1
+                }
+            ],
+            2: [ // Level Menengah
+                {
+                    question: "Apa tiga dimensi utama dari konsep Rahmatan Lil Alamin?",
+                    options: ["Sosial, ekonomi, politik", "Akidah, sosial, ekologi", "Ibadah, muamalah, akhlak", "Iman, Islam, ihsan"],
+                    correct: 1
+                },
+                {
+                    question: "Platform media sosial yang paling populer untuk Gen Z adalah?",
+                    options: ["Facebook", "Twitter", "TikTok dan Instagram", "LinkedIn"],
+                    correct: 2
+                },
+                {
+                    question: "Strategi dakwah modern yang efektif untuk milenial adalah?",
+                    options: ["Ceramah panjang satu arah", "Bahasa relatable dan media sosial", "Menggunakan bahasa Arab saja", "Menghindari teknologi"],
+                    correct: 1
+                },
+                {
+                    question: "QS. Al-Mumtahanah: 8 mengajarkan tentang?",
+                    options: ["Perang melawan non-Muslim", "Berbuat baik kepada non-Muslim yang tidak memusuhi", "Memutus hubungan dengan non-Muslim", "Menghindari semua non-Muslim"],
+                    correct: 1
+                },
+                {
+                    question: "Apa yang dimaksud dengan Islamofobia?",
+                    options: ["Cinta terhadap Islam", "Ketakutan atau kebencian terhadap Islam", "Pemahaman mendalam tentang Islam", "Dakwah Islam"],
+                    correct: 1
+                }
+            ],
+            3: [ // Level Lanjutan
+                {
+                    question: "Nabi Muhammad SAW memperlakukan delegasi Nasrani Najran dengan cara?",
+                    options: ["Mengusir mereka", "Mempersilakan beribadah di masjid", "Memenjarakan mereka", "Mengabaikan mereka"],
+                    correct: 1
+                },
+                {
+                    question: "Dalam QS. Al-Baqarah: 143, umat Islam disebut sebagai?",
+                    options: ["Umat terbaik", "Umat pertengahan (wasathan)", "Umat terakhir", "Umat pilihan"],
+                    correct: 1
+                },
+                {
+                    question: "Cara terbaik menghadapi Islamofobia adalah?",
+                    options: ["Membalas dengan kebencian", "Mengabaikan sepenuhnya", "Menunjukkan akhlak mulia dan edukasi", "Bersikap agresif"],
+                    correct: 2
+                },
+                {
+                    question: "Hadits 'Permudahlah dan jangan persulit' diriwayatkan oleh?",
+                    options: ["Abu Dawud", "Bukhari dan Muslim", "Tirmidzi", "Ahmad"],
+                    correct: 1
+                },
+                {
+                    question: "Dimensi ekologi dalam Islam mengajarkan?",
+                    options: ["Mengeksploitasi alam", "Menjaga kelestarian alam", "Mengabaikan lingkungan", "Fokus profit saja"],
+                    correct: 1
+                }
+            ]
+        };
+
+        let currentLevel = 1;
+        let currentQuestion = 0;
+        let userAnswers = [];
+        let questions = [];
+
+        function startQuiz(level) {
+            currentLevel = level;
+            currentQuestion = 0;
+            userAnswers = [];
+            questions = questionBank[level];
+            
+            document.getElementById('levelSelection').style.display = 'none';
+            document.getElementById('quizContainer').classList.add('active');
+            document.getElementById('currentLevel').textContent = level;
+            
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const question = questions[currentQuestion];
+            const container = document.getElementById('questionContainer');
+            
+            let optionsHTML = '';
+            question.options.forEach((option, index) => {
+                const isSelected = userAnswers[currentQuestion] === index;
+                optionsHTML += `
+                    <div class="option ${isSelected ? 'selected' : ''}" onclick="selectOption(${index})">
+                        <input type="radio" name="answer" id="option${index}" value="${index}" ${isSelected ? 'checked' : ''}>
+                        <label for="option${index}">${option}</label>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = `
+                <div class="question-number">Pertanyaan ${currentQuestion + 1} dari ${questions.length}</div>
+                <div class="question-text">${question.question}</div>
+                <div class="options">${optionsHTML}</div>
+            `;
+            
+            updateProgress();
+            updateButtons();
+        }
+
+        function selectOption(index) {
+            userAnswers[currentQuestion] = index;
+            loadQuestion();
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('questionCounter').textContent = `${currentQuestion + 1}/${questions.length}`;
+        }
+
+        function updateButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            prevBtn.disabled = currentQuestion === 0;
+            
+            if (currentQuestion === questions.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            }
+        }
+
+        function submitQuiz() {
+            let correctCount = 0;
+            questions.forEach((question, index) => {
+                if (userAnswers[index] === question.correct) {
+                    correctCount++;
+                }
+            });
+            
+            const wrongCount = questions.length - correctCount;
+            const percentage = Math.round((correctCount / questions.length) * 100);
+            
+            document.getElementById('quizContainer').classList.remove('active');
+            document.getElementById('resultContainer').classList.add('active');
+            
+            document.getElementById('resultScore').textContent = correctCount;
+            document.getElementById('correctCount').textContent = correctCount;
+            document.getElementById('wrongCount').textContent = wrongCount;
+            document.getElementById('percentageScore').textContent = percentage + '%';
+            
+            let message = '';
+            if (percentage >= 80) {
+                message = '🌟 Luar Biasa! Pemahaman Anda Sangat Baik!';
+            } else if (percentage >= 60) {
+                message = '👍 Bagus! Terus tingkatkan pemahaman Anda!';
+            } else {
+                message = '💪 Semangat! Mari belajar lebih giat lagi!';
+            }
+            
+            document.getElementById('resultMessage').textContent = message;
+        }
+
+        function exitQuiz() {
+            if (confirm('Yakin ingin keluar? Progress Anda akan hilang.')) {
+                resetQuiz();
+            }
+        }
+
+        function resetQuiz() {
+            currentLevel = 1;
+            currentQuestion = 0;
+            userAnswers = [];
+            questions = [];
+            
+            document.getElementById('quizContainer').classList.remove('active');
+            document.getElementById('resultContainer').classList.remove('active');
+            document.getElementById('levelSelection').style.display = 'block';
+            document.getElementById('progressFill').style.width = '0%';
+        }
+
+        function retryQuiz() {
+            currentQuestion = 0;
+            userAnswers = [];
+            
+            document.getElementById('resultContainer').classList.remove('active');
+            document.getElementById('quizContainer').classList.add('active');
+            
+            loadQuestion();
+        }
+    </script>
+</body>
+</html>
